@@ -73,13 +73,13 @@ start_state = 0
 accept_states = {2, 3}
 
 d = DFA(states, alphabet, tranFunction, start_state, accept_states)
-inputString = [list('ab'),list('abcd'),list('abcdef'),list('aaa'),list('bcde')]
+inputString = [list('ab'),list('abcd'),list('abcdef'),list('aaa'),list('bcde'),list('xxx')]
 
 for strings in inputString:
 	if d.runInputList(strings)==2 or d.runInputList(strings)==3:
-		print(str(strings)+" "+"Accepted")
+		print("Input: "+str(strings)+" "+"FinalState="+str(d.runInputList(strings))+" "+"Accepted")
 	else:
-		print(str(strings)+" "+"Rejected")
+		print("Input: "+str(strings)+" "+"FinalState="+str(d.runInputList(strings))+" "+"Rejected")
 
 
 
