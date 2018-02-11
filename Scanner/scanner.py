@@ -20,7 +20,7 @@ class DFA:
 		return 
 
 	def acceptState(self):
-		return self.currentState in acceptStates
+		return self.currentState
 
 	def goToInitial(self):
 		self.currentState=self.startState
@@ -31,6 +31,7 @@ class DFA:
 			self.stateTransition(inputs)
 			continue 
 		return self.acceptState()
+
 
 states={0,1,2,3}
 alphabet={'a','b','c','d'}
@@ -73,7 +74,7 @@ start_state = 0
 accept_states = {2, 3}
 
 d = DFA(states, alphabet, tf, start_state, accept_states)
-inp_program = list('abcdabcdabcd')
+inp_program = list('a')
 print (d.runInputList(inp_program))
 
 
